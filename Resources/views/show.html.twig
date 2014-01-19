@@ -1,0 +1,11 @@
+{% block body %}
+
+<div class="vic-widget" id="widget-{{widget.id}}">
+{% block actions %}{{cms_widget_actions(widget)}}{% endblock actions %}
+
+{% block content %}
+    {{ render(controller('VictoireWidgetBreadcrumbBundle:Breadcrumb:show', { 'page': widget.page })) }}
+{% endblock content %}
+</div>
+
+{% endblock body %}

@@ -1,0 +1,17 @@
+{% block body %}
+<ul class="breadcrumb">
+    {% for breadcrumb_item in breadcrumb %}
+    <li>
+        {% if not loop.last %}
+        <a href="{{ breadcrumb_item.uri }}">
+            {{ breadcrumb_item.label|truncate(40) }}
+        </a>
+         <span class="divider">/</span>
+        {% else %}
+            {{ breadcrumb_item.label }}
+        {% endif %}
+
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
