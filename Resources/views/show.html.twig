@@ -4,7 +4,7 @@
 {% block actions %}{{cms_widget_actions(widget)}}{% endblock actions %}
 
 {% block content %}
-    {{ render(controller('VictoireWidgetBreadcrumbBundle:Breadcrumb:show', { 'page': widget.page })) }}
+    {{ render(controller('VictoireWidgetBreadcrumbBundle:Breadcrumb:show', { 'page': widget.currentPage })) }}
 {% endblock content %}
 </div>
 
