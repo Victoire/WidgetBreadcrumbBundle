@@ -45,7 +45,7 @@ class BreadcrumbBuilder
                     'route' => 'victoire_cms_page_show',
                     'label' => $_page->getTitle(),
                     'routeParameters' => array(
-                        'slug' => $_page->getSlug()
+                        'url' => $_page->getUrl()
                     )
                 ))
                 ->setCurrent(false);
