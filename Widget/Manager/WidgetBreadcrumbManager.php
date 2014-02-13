@@ -35,6 +35,7 @@ protected $container;
 
         return $widget;
     }
+
     /**
      * render the WidgetBreadcrumb
      * @param Widget $widget

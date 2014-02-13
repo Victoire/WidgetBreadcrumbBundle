@@ -15,7 +15,7 @@ class BreadcrumbController extends Controller
 {
     /**
      * @Route("/show")
-     * @Template()
+     * @Template("VictoireWidgetBreadcrumbBundle:Breadcrumb:show.html.twig")
      * @ParamConverter("page", class="VictoirePageBundle:BasePage")
      */
     public function showAction(BasePage $page)
@@ -25,5 +25,4 @@ class BreadcrumbController extends Controller
         return array(
             'breadcrumb' => $breadcrumb->build($page));
     }
-
 }
