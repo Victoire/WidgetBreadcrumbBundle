@@ -1,11 +1,11 @@
 services:
-    victoire_cms.twig.widget_breadcrumb_manager:
+    victoire_core.twig.widget_breadcrumb_manager:
         class: Victoire\Widget\BreadcrumbBundle\Widget\Manager\WidgetBreadcrumbManager
         arguments: [@service_container]
 
     widget_breadcrumb_manager:
-        alias: victoire_cms.twig.widget_breadcrumb_manager
+        alias: victoire_core.twig.widget_breadcrumb_manager
 
-    victoire_cms.widget_breadcrumb_builder:
+    victoire_core.widget_breadcrumb_builder:
         class: Victoire\Widget\BreadcrumbBundle\Breadcrumb\Builder\BreadcrumbBuilder
         arguments: ["@knp_menu.factory"]

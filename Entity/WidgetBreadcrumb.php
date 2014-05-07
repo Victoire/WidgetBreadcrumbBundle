@@ -2,7 +2,7 @@
 namespace Victoire\Widget\BreadcrumbBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Victoire\CmsBundle\Entity\Widget;
+use Victoire\Bundle\CoreBundle\Entity\Widget;
 
 /**
  * WidgetBreadcrumb
@@ -12,6 +12,6 @@ use Victoire\CmsBundle\Entity\Widget;
  */
 class WidgetBreadcrumb extends Widget
 {
-    use \Victoire\CmsBundle\Entity\Traits\WidgetTrait;
+    use \Victoire\Bundle\CoreBundle\Entity\Traits\WidgetTrait;
 
 }

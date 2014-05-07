@@ -42,7 +42,7 @@ class BreadcrumbBuilder
         foreach (array_reverse($parents) as $key => $_page) {
             $item = $breadcrumb
                 ->addChild($key, array(
-                    'route' => 'victoire_cms_page_show',
+                    'route' => 'victoire_core_page_show',
                     'label' => $_page->getTitle(),
                     'routeParameters' => array(
                         'url' => $_page->getUrl()

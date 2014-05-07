@@ -20,7 +20,7 @@ class BreadcrumbController extends Controller
      */
     public function showAction(BasePage $page)
     {
-        $breadcrumb = $this->get('victoire_cms.widget_breadcrumb_builder');
+        $breadcrumb = $this->get('victoire_core.widget_breadcrumb_builder');
 
         return array(
             'breadcrumb' => $breadcrumb->build($page));

@@ -1,4 +1,4 @@
-victoire_cms:
+victoire_core:
     widgets:
         widgetbreadcrumb:
             class: "Victoire\\Widget\\BreadcrumbBundle\\Entity\\WidgetBreadcrumb"
