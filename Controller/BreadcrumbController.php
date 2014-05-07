@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
-use Victoire\PageBundle\Entity\BasePage;
+use Victoire\Bundle\PageBundle\Entity\BasePage;
 
 /**
  * Display a breadcrumb for a given page

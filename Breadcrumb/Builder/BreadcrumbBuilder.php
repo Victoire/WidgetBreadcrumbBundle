@@ -2,7 +2,7 @@
 namespace Victoire\Widget\BreadcrumbBundle\Breadcrumb\Builder;
 
 use Knp\Menu\FactoryInterface;
-use Victoire\PageBundle\Entity\BasePage;
+use Victoire\Bundle\PageBundle\Entity\BasePage;
 
 /**
  * This class generate a breadcrumb for a Victoire CMS page given
