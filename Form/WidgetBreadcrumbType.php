@@ -53,6 +53,6 @@ class WidgetBreadcrumbType extends WidgetType
      */
     public function getName()
     {
-        return 'appventus_victoireCoreBundle_widgetbreadcrumbtype';
+        return 'appventus_victoirecorebundle_widgetbreadcrumbtype';
     }
 }
