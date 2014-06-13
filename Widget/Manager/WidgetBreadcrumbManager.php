@@ -34,8 +34,6 @@ use Victoire\Bundle\CoreBundle\Widget\Managers\WidgetManagerInterface;
  */
 class WidgetBreadcrumbManager extends BaseWidgetManager implements WidgetManagerInterface
 {
-
-
     /**
      * Get the static content of the widget
      *
