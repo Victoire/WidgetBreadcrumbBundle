@@ -9,10 +9,12 @@ use Victoire\Bundle\PageBundle\Entity\BasePage;
  *
  * @package VictoireWidgetBreadcrumbBundle
  * @author
+ *
+ * ref: victoire_core.widget_breadcrumb_builder
  **/
 class BreadcrumbBuilder
 {
-    private $factory;
+    protected $factory;
 
     /**
      * @param FactoryInterface $factory
@@ -25,6 +27,7 @@ class BreadcrumbBuilder
     /**
      * Build a breadcrumb for a Victoire CMS page given
      *
+     * @param BasePage $page The page
      * @return MenuItem
      * @author lenybernard
      **/
@@ -40,14 +43,12 @@ class BreadcrumbBuilder
         }
 
         foreach (array_reverse($parents) as $key => $_page) {
-            $item = $breadcrumb
-                ->addChild($key, array(
+            $breadcrumb->addChild($key, array(
                     'route' => 'victoire_core_page_show',
                     'label' => $_page->getTitle(),
-                    'routeParameters' => array(
-                        'url' => $_page->getUrl()
+                    'routeParameters' => array('url' => $_page->getUrl())
                     )
-                ))
+                )
                 ->setCurrent(false);
         }
 
@@ -56,4 +57,4 @@ class BreadcrumbBuilder
 
         return $breadcrumb;
     }
-} // END class BreadcrumbBuilder
+}

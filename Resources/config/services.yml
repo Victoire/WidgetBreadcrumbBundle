@@ -1,11 +1,24 @@
 services:
     victoire_core.twig.widget_breadcrumb_manager:
         class: Victoire\Widget\BreadcrumbBundle\Widget\Manager\WidgetBreadcrumbManager
-        arguments: [@service_container]
+        arguments: 
+            - "@service_container"
 
     widget_breadcrumb_manager:
         alias: victoire_core.twig.widget_breadcrumb_manager
-
+        
+    #alias to the entity
+    victoire.widget.breadcrumb:
+        class: Victoire\Widget\BreadcrumbBundle\Entity\WidgetBreadcrumb
+        
+    #alias to the form
+    victoire.widget.form.breadcrumb:
+        class: Victoire\Widget\BreadcrumbBundle\Form\WidgetBreadcrumbType
+        tags:
+            - { name: form.type , alias: victoire_widget_form_breadcrumb}
+            
     victoire_core.widget_breadcrumb_builder:
         class: Victoire\Widget\BreadcrumbBundle\Breadcrumb\Builder\BreadcrumbBuilder
-        arguments: ["@knp_menu.factory"]
+        arguments: 
+            - "@knp_menu.factory"
+            
