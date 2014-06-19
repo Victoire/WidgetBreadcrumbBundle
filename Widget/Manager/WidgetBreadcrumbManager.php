@@ -7,6 +7,7 @@ namespace Victoire\Widget\BreadcrumbBundle\Widget\Manager;
 use Victoire\Bundle\CoreBundle\Widget\Managers\BaseWidgetManager;
 use Victoire\Bundle\CoreBundle\Entity\Widget;
 use Victoire\Bundle\CoreBundle\Widget\Managers\WidgetManagerInterface;
+use Victoire\Widget\BreadcrumbBundle\Breadcrumb\Builder\BreadcrumbBuilder;
 
 /**
  * CRUD operations on WidgetRedactor Widget
@@ -34,22 +35,6 @@ use Victoire\Bundle\CoreBundle\Widget\Managers\WidgetManagerInterface;
  */
 class WidgetBreadcrumbManager extends BaseWidgetManager implements WidgetManagerInterface
 {
-    /**
-     * Get the static content of the widget
-     *
-     * @param Widget $widget
-     * @return string The static content
-     *
-     * @SuppressWarnings checkUnusedFunctionParameters
-     */
-    protected function getWidgetStaticContent(Widget $widget)
-    {
-        $builder = $this->container->get('victoire_core.widget_breadcrumb_builder');
-        $breadcrumbs = $builder->build($widget->getPage());
-
-        return $breadcrumbs;
-    }
-
     /**
      * The name of the widget
      *

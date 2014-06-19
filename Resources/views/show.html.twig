@@ -2,20 +2,6 @@
 {% extends 'VictoireCoreBundle:Widget:show.html.twig' %}
 
 {% block content %}
-	<ul class="breadcrumb">
-	    {% for breadcrumb_item in content %}
-	    <li>
-	        {% if not loop.last %}
-	        <a href="{{ breadcrumb_item.uri }}">
-	            {{ breadcrumb_item.label|truncate(40) }}
-	        </a>
-	         <span class="divider">/</span>
-	        {% else %}
-	            {{ breadcrumb_item.label }}
-	        {% endif %}
-
-	    </li>
-	    {% endfor %}
-	</ul>
+    {{ cms_breadcrumb(page) }}
 {% endblock content %}
 

@@ -22,3 +22,10 @@ services:
         arguments: 
             - "@knp_menu.factory"
             
+    victoire_core.twig.cms_widget_breadcrumb:
+        class: Victoire\Widget\BreadcrumbBundle\Twig\Extension\WidgetBreadcrumbExtension
+        arguments: 
+            - "@victoire_templating"
+            - "@victoire_core.widget_breadcrumb_builder" 
+        tags:
+            - { name: twig.extension }
