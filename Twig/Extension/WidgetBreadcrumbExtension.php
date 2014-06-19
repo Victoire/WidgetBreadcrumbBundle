@@ -92,8 +92,14 @@ class WidgetBreadcrumbExtension extends \Twig_Extension
      *
      * @return string the widget actions (buttons edit, move and delete)
      */
-    public function cmsBreadcrumb(Page $page)
+    public function cmsBreadcrumb(Widget $widget, $page)
     {
+        //the twig template might not have access to the current page
+        if ($page === null) {
+            //so we use the page of the widget
+            $page = $widget->getPage();
+        }
+
         $builder = $this->breadcrumbBuilder;
 
         $breadcrumbs = $builder->build($page);
