@@ -26,7 +26,8 @@ class WidgetBreadcrumbExtension extends \Twig_Extension
     /**
      * Constructor
      *
-     * @param WidgetManager          $widgetManager
+     * @param WidgetManager     $widgetManager
+     * @param BreadcrumbBuilder $breadcrumbBuilder
      */
     public function __construct(TemplateMapper $templating, BreadcrumbBuilder $breadcrumbBuilder)
     {
@@ -63,12 +64,15 @@ class WidgetBreadcrumbExtension extends \Twig_Extension
      * @param string $value     The string to hash
      * @param string $algorithm The algorithm we have to use to hash the string
      *
+     * @return string The hash
      */
     public function hash($value, $algorithm = "md5")
     {
         try {
             return hash($algorithm, $value);
-        } catch (Exception $e) {
+        } catch (\Exception $ex) {
+            error_log($ex->getMessage());
+            error_log($ex->getTraceAsString());
             error_log('Please check that the '.$algorithm.' does exists because it failed when trying to run. We are expecting a valid algorithm such as md5 or sha512 etc.');
 
             return $value;
@@ -89,10 +93,12 @@ class WidgetBreadcrumbExtension extends \Twig_Extension
      * render actions for a widget
      *
      * @param Widget $widget The widget to render
+     * @param Page   $page   The current page
+     * @param Entity $entity The current entity
      *
      * @return string the widget actions (buttons edit, move and delete)
      */
-    public function cmsBreadcrumb(Widget $widget, $page)
+    public function cmsBreadcrumb(Widget $widget, $page, $entity)
     {
         //the twig template might not have access to the current page
         if ($page === null) {
@@ -102,7 +108,7 @@ class WidgetBreadcrumbExtension extends \Twig_Extension
 
         $builder = $this->breadcrumbBuilder;
 
-        $breadcrumbs = $builder->build($page);
+        $breadcrumbs = $builder->build($page, $entity);
 
         return $this->templating->render(
             'VictoireWidgetBreadcrumbBundle:Breadcrumb:show.html.twig',
