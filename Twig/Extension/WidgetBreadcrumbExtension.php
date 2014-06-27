@@ -54,29 +54,7 @@ class WidgetBreadcrumbExtension extends \Twig_Extension
      */
     public function getFilters()
     {
-        return array(
-            'hash' => new \Twig_Filter_Method($this, 'hash'),
-        );
-    }
-
-    /**
-     * hash some string with given algorithm
-     * @param string $value     The string to hash
-     * @param string $algorithm The algorithm we have to use to hash the string
-     *
-     * @return string The hash
-     */
-    public function hash($value, $algorithm = "md5")
-    {
-        try {
-            return hash($algorithm, $value);
-        } catch (\Exception $ex) {
-            error_log($ex->getMessage());
-            error_log($ex->getTraceAsString());
-            error_log('Please check that the '.$algorithm.' does exists because it failed when trying to run. We are expecting a valid algorithm such as md5 or sha512 etc.');
-
-            return $value;
-        }
+        return array();
     }
 
     /**
