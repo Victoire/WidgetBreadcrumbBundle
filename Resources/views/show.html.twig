@@ -1,11 +1,7 @@
-{% block body %}
-
-<div class="vic-widget" id="widget-{{widget.id}}">
-{% block actions %}{{cms_widget_actions(widget)}}{% endblock actions %}
+{% trans_default_domain "victoire" %}
+{% extends 'VictoireCoreBundle:Widget:show.html.twig' %}
 
 {% block content %}
-    {{ render(controller('VictoireWidgetBreadcrumbBundle:Breadcrumb:show', { 'page': widget.currentPage })) }}
+    {{ cms_breadcrumb(widget, page, entity) }}
 {% endblock content %}
-</div>
 
-{% endblock body %}

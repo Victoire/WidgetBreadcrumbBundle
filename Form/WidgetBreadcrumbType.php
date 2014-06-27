@@ -14,7 +14,6 @@ use Victoire\Bundle\CoreBundle\Form\WidgetType;
  */
 class WidgetBreadcrumbType extends WidgetType
 {
-
     /**
      * define form fields
      * @param FormBuilderInterface $builder
@@ -22,24 +21,18 @@ class WidgetBreadcrumbType extends WidgetType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        //choose form mode
-        if ($this->entity_name === null) {
-            //if no entity is given, we generate the static form
-            $builder;
-
-        } else {
-            //else, WidgetType class will embed a EntityProxyType for given entity
-            parent::buildForm($builder, $options);
-        }
+        parent::buildForm($builder, $options);
     }
-
 
     /**
      * bind form to WidgetBreadcrumb entity
+     *
      * @param OptionsResolverInterface $resolver
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
+        parent::setDefaultOptions($resolver);
+
         $resolver->setDefaults(array(
             'data_class'         => 'Victoire\Widget\BreadcrumbBundle\Entity\WidgetBreadcrumb',
             'widget'             => 'breadcrumb',
@@ -47,12 +40,13 @@ class WidgetBreadcrumbType extends WidgetType
         ));
     }
 
-
     /**
      * get form name
+     *
+     * @return string
      */
     public function getName()
     {
-        return 'appventus_victoirecorebundle_widgetbreadcrumbtype';
+        return 'victoire_widget_form_breadcrumb';
     }
 }

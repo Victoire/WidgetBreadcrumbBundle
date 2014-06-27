@@ -12,6 +12,4 @@ use Victoire\Bundle\CoreBundle\Entity\Widget;
  */
 class WidgetBreadcrumb extends Widget
 {
-    use \Victoire\Bundle\CoreBundle\Entity\Traits\WidgetTrait;
-
 }
