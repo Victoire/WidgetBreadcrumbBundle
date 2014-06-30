@@ -3,6 +3,7 @@ services:
         class: Victoire\Widget\BreadcrumbBundle\Widget\Manager\WidgetBreadcrumbManager
         arguments: 
             - "@service_container"
+            - "Breadcrumb"
 
     widget_breadcrumb_manager:
         alias: victoire_core.twig.widget_breadcrumb_manager
