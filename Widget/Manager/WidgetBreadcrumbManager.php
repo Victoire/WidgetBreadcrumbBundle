@@ -35,13 +35,5 @@ use Victoire\Widget\BreadcrumbBundle\Breadcrumb\Builder\BreadcrumbBuilder;
  */
 class WidgetBreadcrumbManager extends BaseWidgetManager implements WidgetManagerInterface
 {
-    /**
-     * The name of the widget
-     *
-     * @return string
-     */
-    public function getWidgetName()
-    {
-        return 'Breadcrumb';
-    }
+
 }
