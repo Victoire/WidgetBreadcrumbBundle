@@ -2,7 +2,6 @@
 namespace Victoire\Widget\BreadcrumbBundle\Breadcrumb\Builder;
 
 use Knp\Menu\FactoryInterface;
-use Victoire\Bundle\PageBundle\Entity\BasePage;
 use Victoire\Bundle\PageBundle\Entity\Page;
 use Victoire\Bundle\BusinessEntityTemplateBundle\Entity\BusinessEntityTemplatePage;
 
@@ -29,28 +28,15 @@ class BreadcrumbBuilder
     /**
      * Build a breadcrumb for a Victoire CMS page given
      *
-     * @param BasePage $page   The page
+     * @param Page $page   The page
      * @param Entity   $entity The current entity
      *
      * @return MenuItem
      * @author lenybernard
      **/
-    public function build(BasePage $page, $entity)
+    public function build(Page $page, $entity)
     {
         $breadcrumb = $this->factory->createItem('root');
-
-        //if the page is a business entity template
-        if ($page instanceof BusinessEntityTemplatePage) {
-            //and an entity is provided
-            if ($entity !== null) {
-                //then we create a fake page for the breadcrumb
-                $fakePage = new Page();
-                $fakePage->setTitle($entity->getId());
-                $fakePage->setSlug($entity->getId());
-                $fakePage->setParent($page);
-                $page = $fakePage;
-            }
-        }
 
         $_page = $page;
         $parents = array();
