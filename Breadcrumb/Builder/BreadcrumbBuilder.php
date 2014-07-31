@@ -3,7 +3,6 @@ namespace Victoire\Widget\BreadcrumbBundle\Breadcrumb\Builder;
 
 use Knp\Menu\FactoryInterface;
 use Victoire\Bundle\PageBundle\Entity\Page;
-use Victoire\Bundle\BusinessEntityTemplateBundle\Entity\BusinessEntityTemplatePage;
 
 /**
  * This class generate a breadcrumb for a Victoire CMS page given
@@ -28,8 +27,8 @@ class BreadcrumbBuilder
     /**
      * Build a breadcrumb for a Victoire CMS page given
      *
-     * @param Page $page   The page
-     * @param Entity   $entity The current entity
+     * @param Page   $page   The page
+     * @param Entity $entity The current entity
      *
      * @return MenuItem
      * @author lenybernard
@@ -54,13 +53,15 @@ class BreadcrumbBuilder
                     'label' => $_page->getTitle(),
                     'routeParameters' => array('url' => $_page->getUrl())
                     )
-                )
+            )
                 ->setCurrent(false);
         }
 
-
         //Add the current page
-        $breadcrumb->addChild($page->getSlug())->setLabel($page->getTitle())->setCurrent(true);
+        $slug = $page->getSlug();
+        $label = $page->getTitle();
+
+        $breadcrumb->addChild($slug)->setLabel($label)->setCurrent(true);
 
         return $breadcrumb;
     }
