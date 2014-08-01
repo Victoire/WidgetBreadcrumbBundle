@@ -1,5 +1,5 @@
 victoire_core:
     widgets:
-        widgetbreadcrumb:
+        Breadcrumb:
             class: "Victoire\\Widget\\BreadcrumbBundle\\Entity\\WidgetBreadcrumb"
-            name: breadcrumb
+            name: Breadcrumb
