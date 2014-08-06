@@ -2,17 +2,10 @@
 
 namespace Victoire\Widget\BreadcrumbBundle\Twig\Extension;
 
-use Victoire\Bundle\CoreBundle\Menu\MenuManager;
 use Victoire\Bundle\CoreBundle\Widget\Managers\WidgetManager;
 use Victoire\Bundle\CoreBundle\Template\TemplateMapper;
-use Symfony\Component\Security\Core\SecurityContext;
 use Victoire\Bundle\PageBundle\Entity\Page;
-use Victoire\Bundle\BusinessEntityTemplateBundle\Entity\BusinessEntityTemplatePage;
-use Victoire\Bundle\CoreBundle\Entity\Widget;
-use Victoire\Bundle\CoreBundle\Form\WidgetType;
-use Victoire\Bundle\CoreBundle\Helper\WidgetHelper;
-use Victoire\Bundle\PageBundle\WidgetMap\WidgetMapBuilder;
-use Victoire\Bundle\CoreBundle\Handler\WidgetExceptionHandler;
+use Victoire\Bundle\WidgetBundle\Entity\Widget;
 use Victoire\Widget\BreadcrumbBundle\Breadcrumb\Builder\BreadcrumbBuilder;
 
 /**
