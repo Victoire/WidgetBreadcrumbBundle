@@ -7,7 +7,7 @@ use Victoire\Bundle\WidgetBundle\Entity\Widget;
 /**
  * WidgetBreadcrumb
  *
- * @ORM\Table("cms_widget_breadcrumb")
+ * @ORM\Table("vic_widget_breadcrumb")
  * @ORM\Entity
  */
 class WidgetBreadcrumb extends Widget
