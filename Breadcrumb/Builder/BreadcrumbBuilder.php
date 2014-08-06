@@ -2,14 +2,10 @@
 namespace Victoire\Widget\BreadcrumbBundle\Breadcrumb\Builder;
 
 use Knp\Menu\FactoryInterface;
-use Victoire\Bundle\PageBundle\Entity\Page;
+use Victoire\Bundle\CoreBundle\Entity\View;
 
 /**
- * This class generate a breadcrumb for a Victoire CMS page given
- *
- * @package VictoireWidgetBreadcrumbBundle
- * @author
- *
+ * This class generate a breadcrumb for a Victoire CMS view given
  * ref: victoire_core.widget_breadcrumb_builder
  **/
 class BreadcrumbBuilder
@@ -25,41 +21,40 @@ class BreadcrumbBuilder
     }
 
     /**
-     * Build a breadcrumb for a Victoire CMS page given
+     * Build a breadcrumb for a Victoire CMS view given
      *
-     * @param Page   $page   The page
+     * @param View   $view   The view
      * @param Entity $entity The current entity
      *
      * @return MenuItem
      * @author lenybernard
      **/
-    public function build(Page $page, $entity)
+    public function build(View $view, $entity)
     {
         $breadcrumb = $this->factory->createItem('root');
 
-        $_page = $page;
+        $_view = $view;
         $parents = array();
 
-        //create the list of page with the parents pages
-        while ($_page->getParent()) {
-            $_page = $_page->getParent();
-            $parents[] = $_page;
+        //create the list of view with the parents views
+        while ($_view->getParent()) {
+            $_view = $_view->getParent();
+            $parents[] = $_view;
         }
 
         //build the items of the breadcrumb
-        foreach (array_reverse($parents) as $key => $_page) {
+        foreach (array_reverse($parents) as $key => $_view) {
             $breadcrumb->addChild($key, array(
                     'route' => 'victoire_core_page_show',
-                    'label' => $_page->getTitle(),
-                    'routeParameters' => array('url' => $_page->getUrl())
+                    'label' => $_view->getTitle(),
+                    'routeParameters' => array('url' => $_view->getUrl())
                     )
-            )
-                ->setCurrent(false);
+            )->setCurrent(false);
         }
 
-        //Add the current page
-        $slug = $page->getSlug();
-        $label = $page->getTitle();
+        //Add the current view
+        $slug = $view->getSlug();
+        $label = $view->getTitle();
 
         $breadcrumb->addChild($slug)->setLabel($label)->setCurrent(true);
 

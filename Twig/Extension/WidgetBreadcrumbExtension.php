@@ -4,12 +4,11 @@ namespace Victoire\Widget\BreadcrumbBundle\Twig\Extension;
 
 use Victoire\Bundle\CoreBundle\Widget\Managers\WidgetManager;
 use Victoire\Bundle\CoreBundle\Template\TemplateMapper;
-use Victoire\Bundle\PageBundle\Entity\Page;
 use Victoire\Bundle\WidgetBundle\Entity\Widget;
 use Victoire\Widget\BreadcrumbBundle\Breadcrumb\Builder\BreadcrumbBuilder;
 
 /**
- * PageExtension extends Twig with page capabilities.
+ * PageExtension extends Twig with view capabilities.
  */
 class WidgetBreadcrumbExtension extends \Twig_Extension
 {
@@ -63,22 +62,21 @@ class WidgetBreadcrumbExtension extends \Twig_Extension
      * render actions for a widget
      *
      * @param Widget $widget The widget to render
-     * @param Page   $page   The current page
+     * @param View   $view   The current view
      * @param Entity $entity The current entity
      *
      * @return string the widget actions (buttons edit, move and delete)
      */
-    public function cmsBreadcrumb(Widget $widget, $page, $entity)
+    public function cmsBreadcrumb(Widget $widget, $view, $entity)
     {
-        //the twig template might not have access to the current page
-        if ($page === null) {
-            //so we use the page of the widget
-            $page = $widget->getPage();
+        //the twig template might not have access to the current view
+        if ($view === null) {
+            //so we use the view of the widget
+            $view = $widget->getView();
         }
 
         $builder = $this->breadcrumbBuilder;
-
-        $breadcrumbs = $builder->build($page, $entity);
+        $breadcrumbs = $builder->build($view, $entity);
 
         return $this->templating->render(
             'VictoireWidgetBreadcrumbBundle:Breadcrumb:show.html.twig',
