@@ -6,6 +6,7 @@ use Victoire\Bundle\CoreBundle\Entity\View;
 
 /**
  * This class generate a breadcrumb for a Victoire CMS view given
+ *
  * ref: victoire_core.widget_breadcrumb_builder
  **/
 class BreadcrumbBuilder
@@ -46,15 +47,16 @@ class BreadcrumbBuilder
         foreach (array_reverse($parents) as $key => $_view) {
             $breadcrumb->addChild($key, array(
                     'route' => 'victoire_core_page_show',
-                    'label' => $_view->getTitle(),
+                    'label' => $_view->getName(),
                     'routeParameters' => array('url' => $_view->getUrl())
                     )
-            )->setCurrent(false);
+            )
+            ->setCurrent(false);
         }
 
         //Add the current view
         $slug = $view->getSlug();
-        $label = $view->getTitle();
+        $label = $view->getName();
 
         $breadcrumb->addChild($slug)->setLabel($label)->setCurrent(true);
 
