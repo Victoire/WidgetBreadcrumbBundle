@@ -2,10 +2,9 @@
 
 namespace Victoire\Widget\BreadcrumbBundle\Twig\Extension;
 
-use Victoire\Bundle\CoreBundle\Widget\Managers\WidgetManager;
 use Victoire\Bundle\CoreBundle\Template\TemplateMapper;
 use Victoire\Bundle\PageBundle\Entity\Page;
-use Victoire\Bundle\CoreBundle\Entity\Widget;
+use Victoire\Bundle\WidgetBundle\Entity\Widget;
 use Victoire\Widget\BreadcrumbBundle\Breadcrumb\Builder\BreadcrumbBuilder;
 
 /**
@@ -18,7 +17,7 @@ class WidgetBreadcrumbExtension extends \Twig_Extension
     /**
      * Constructor
      *
-     * @param WidgetManager     $widgetManager
+     * @param TemplateMapper    $templating
      * @param BreadcrumbBuilder $breadcrumbBuilder
      */
     public function __construct(TemplateMapper $templating, BreadcrumbBuilder $breadcrumbBuilder)

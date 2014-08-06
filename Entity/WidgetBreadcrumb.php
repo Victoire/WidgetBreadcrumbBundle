@@ -2,7 +2,7 @@
 namespace Victoire\Widget\BreadcrumbBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Victoire\Bundle\CoreBundle\Entity\Widget;
+use Victoire\Bundle\WidgetBundle\Entity\Widget;
 
 /**
  * WidgetBreadcrumb
