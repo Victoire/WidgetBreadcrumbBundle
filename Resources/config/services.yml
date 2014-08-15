@@ -5,6 +5,10 @@ services:
         tags:
             - { name: victoire_widget.widget_content_resolver, alias: Breadcrumb }
 
+    #alias to the entity
+    victoire.widget.breadcrumb:
+        class: Victoire\Widget\BreadcrumbBundle\Entity\WidgetBreadcrumb
+
     #alias to the form
     victoire.widget.form.breadcrumb:
         class: Victoire\Widget\BreadcrumbBundle\Form\WidgetBreadcrumbType
