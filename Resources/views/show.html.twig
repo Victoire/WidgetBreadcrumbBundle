@@ -2,6 +2,6 @@
 {% extends 'VictoireCoreBundle:Widget:show.html.twig' %}
 
 {% block content %}
-    {{ cms_breadcrumb(widget, view, entity) }}
+    {{ cms_breadcrumb(widget, widget.currentView, entity) }}
 {% endblock content %}
 
