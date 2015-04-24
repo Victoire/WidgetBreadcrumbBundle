@@ -7,7 +7,7 @@ Get this breadcrumb bundle and so on
 First you need to have a valid Symfony2 Victoire edition.
 Then you just have to run the following composer command :
 
-    php composer.phar require friendsvictoire/breadcrumb-widget
+    php composer.phar require friendsofvictoire/breadcrumb-widget
 
 The breadcrumb bundle handles Bootstrap and Foundation view.
 
