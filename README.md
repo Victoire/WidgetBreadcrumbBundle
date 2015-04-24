@@ -1,7 +1,7 @@
-Victoire CMS Breadcrumb Bundle
+Victoire Breadcrumb Bundle
 ============
 
-Need to add a breadcrumb in a victoire cms website ?
+Need to add a breadcrumb in a victoire website ?
 Get this breadcrumb bundle and so on
 
 First you need to have a valid Symfony2 Victoire edition.
