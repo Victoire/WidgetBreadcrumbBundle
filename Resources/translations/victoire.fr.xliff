@@ -8,11 +8,11 @@
     <body>
       <trans-unit resname="widget.breadcrumb.new.action.label">
         <source>widget.breadcrumb.new.action.label</source>
-        <target>Fil d'arianne</target>
+        <target>Fil d'ariane</target>
       </trans-unit>
       <trans-unit resname="modal.form.widget.type.breadcrumb.label">
         <source>modal.form.widget.type.breadcrumb.label</source>
-        <target>Fil d'arianne</target>
+        <target>Fil d'ariane</target>
       </trans-unit>
       <trans-unit resname="widget.breadcrumb.new.nocustomisation">
         <source>widget.breadcrumb.new.nocustomisation</source>
