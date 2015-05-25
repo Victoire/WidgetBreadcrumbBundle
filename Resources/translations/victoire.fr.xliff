@@ -16,7 +16,7 @@
       </trans-unit>
       <trans-unit resname="widget.breadcrumb.new.nocustomisation">
         <source>widget.breadcrumb.new.nocustomisation</source>
-        <target>Il n'y a aucun paramétrage possible pour ce widget. Merci de simplement cliquer sur le bouton de sauvegarde pour créer le fil d'arianne</target>
+        <target>Il n'y a aucun paramétrage possible pour ce widget. Merci de simplement cliquer sur le bouton de sauvegarde pour créer le fil d'ariane</target>
       </trans-unit>
       <trans-unit resname="widget.breadcrumb.edit.nocustomisation">
         <source>widget.breadcrumb.edit.nocustomisation</source>
