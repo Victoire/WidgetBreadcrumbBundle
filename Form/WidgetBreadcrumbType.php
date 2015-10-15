@@ -7,12 +7,13 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Victoire\Bundle\CoreBundle\Form\WidgetType;
 
 /**
- * WidgetBreadcrumb form type
+ * WidgetBreadcrumb form type.
  */
 class WidgetBreadcrumbType extends WidgetType
 {
     /**
-     * define form fields
+     * define form fields.
+     *
      * @param FormBuilderInterface $builder
      * @param array                $options
      */
@@ -22,7 +23,7 @@ class WidgetBreadcrumbType extends WidgetType
     }
 
     /**
-     * bind form to WidgetBreadcrumb entity
+     * bind form to WidgetBreadcrumb entity.
      *
      * @param OptionsResolverInterface $resolver
      */
@@ -30,15 +31,15 @@ class WidgetBreadcrumbType extends WidgetType
     {
         parent::setDefaultOptions($resolver);
 
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'data_class'         => 'Victoire\Widget\BreadcrumbBundle\Entity\WidgetBreadcrumb',
             'widget'             => 'breadcrumb',
-            'translation_domain' => 'victoire'
-        ));
+            'translation_domain' => 'victoire',
+        ]);
     }
 
     /**
-     * get form name
+     * get form name.
      *
      * @return string
      */

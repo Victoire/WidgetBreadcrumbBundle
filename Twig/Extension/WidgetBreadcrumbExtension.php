@@ -14,7 +14,7 @@ class WidgetBreadcrumbExtension extends \Twig_Extension
     protected $breadcrumbBuilder = null;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param TemplateMapper    $templating
      * @param BreadcrumbBuilder $breadcrumbBuilder
@@ -26,29 +26,29 @@ class WidgetBreadcrumbExtension extends \Twig_Extension
     }
 
     /**
-     * register twig functions
+     * register twig functions.
      *
      * @return array The list of extensions
      */
     public function getFunctions()
     {
-        return array(
-            'cms_breadcrumb' => new \Twig_Function_Method($this, 'cmsBreadcrumb', array('is_safe' => array('html')))
-        );
+        return [
+            'cms_breadcrumb' => new \Twig_Function_Method($this, 'cmsBreadcrumb', ['is_safe' => ['html']]),
+        ];
     }
 
     /**
-     * register twig filters
+     * register twig filters.
      *
      * @return array The list of filters
      */
     public function getFilters()
     {
-        return array();
+        return [];
     }
 
     /**
-     * get extension name
+     * get extension name.
      *
      * @return string The name
      */
@@ -58,7 +58,7 @@ class WidgetBreadcrumbExtension extends \Twig_Extension
     }
 
     /**
-     * render actions for a widget
+     * render actions for a widget.
      *
      * @param Widget $widget The widget to render
      * @param View   $view   The current view
@@ -79,7 +79,7 @@ class WidgetBreadcrumbExtension extends \Twig_Extension
 
         return $this->templating->render(
             'VictoireWidgetBreadcrumbBundle:Breadcrumb:show.html.twig',
-            array('breadcrumbs' => $breadcrumbs)
+            ['breadcrumbs' => $breadcrumbs]
         );
     }
 }
