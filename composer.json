@@ -1,24 +1,40 @@
 {
-    "name": "friendsofvictoire/breadcrumb-widget",
-    "type": "symfony-bundle",
-    "description": "Victoire DCMS Breadcrumb widget",
-    "keywords": ["DCMS", "Victoire", "widget", "FriendsofVictoire", "FoV", "Dynamic", "CMS", "Breadcrumb"],
-    "homepage": "http://victoire.io",
-    "license": "MIT",
-    "authors": [
+    "name"             : "friendsofvictoire/breadcrumb-widget",
+    "type"             : "symfony-bundle",
+    "description"      : "Victoire DCMS Breadcrumb widget",
+    "keywords"         : [
+        "DCMS",
+        "Victoire",
+        "widget",
+        "FriendsofVictoire",
+        "FoV",
+        "Dynamic",
+        "CMS",
+        "Breadcrumb"
+    ],
+    "homepage"         : "http://victoire.io",
+    "license"          : "MIT",
+    "authors"          : [
         {
-            "name": "Leny Bernard",
+            "name" : "Leny Bernard",
             "email": "leny@victoire.io"
         }
     ],
-    "require": {
-        "php"                        : ">=5.3.3",
-        "symfony/framework-bundle"   : "~2.3",
-        "victoire/victoire"          : "~1.3.0"
-    },    
-    "autoload": {
-        "psr-0": { "Victoire\\Widget\\BreadcrumbBundle": "" }
+    "require"          : {
+        "php"                     : ">=5.3.3",
+        "symfony/framework-bundle": "~2.3",
+        "victoire/victoire"       : "~1.3.0"
+    },
+    "autoload"         : {
+        "psr-0": {
+            "Victoire\\Widget\\BreadcrumbBundle": ""
+        }
     },
     "minimum-stability": "dev",
-    "target-dir": "Victoire/Widget/BreadcrumbBundle"
+    "target-dir"       : "Victoire/Widget/BreadcrumbBundle",
+    "extra"            : {
+        "branch-alias": {
+            "dev-master": "1.3.x-dev"
+        }
+    }
 }
