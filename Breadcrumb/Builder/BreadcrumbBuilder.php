@@ -3,6 +3,7 @@
 namespace Victoire\Widget\BreadcrumbBundle\Breadcrumb\Builder;
 
 use Knp\Menu\FactoryInterface;
+use Knp\Menu\MenuItem;
 use Victoire\Bundle\CoreBundle\Entity\View;
 
 /**
@@ -26,7 +27,7 @@ class BreadcrumbBuilder
      * Build a breadcrumb for a Victoire CMS view given.
      *
      * @param View   $view   The view
-     * @param Entity $entity The current entity
+     * @param object $entity The current entity
      *
      * @return MenuItem
      *
@@ -41,19 +42,22 @@ class BreadcrumbBuilder
 
         //create the list of view with the parents views
         while ($_view->getParent()) {
+            /** @var View $_view */
             $_view = $_view->getParent();
             $parents[] = $_view;
         }
 
         //build the items of the breadcrumb
         foreach (array_reverse($parents) as $key => $_view) {
-            $breadcrumb->addChild($key, [
+            $breadcrumb->addChild(
+                $key,
+                [
                     'route'           => 'victoire_core_page_show',
                     'label'           => $_view->getName(),
-                    'routeParameters' => ['url' => $_view->getUrl()],
-                    ]
+                    'routeParameters' => ['url' => $_view->getReference()->getUrl()]
+                ]
             )
-            ->setCurrent(false);
+                ->setCurrent(false);
         }
 
         //Add the current view
