@@ -33,7 +33,7 @@ class WidgetBreadcrumbExtension extends \Twig_Extension
     public function getFunctions()
     {
         return [
-            'cms_breadcrumb' => new \Twig_Function_Method($this, 'cmsBreadcrumb', ['is_safe' => ['html']]),
+            new \Twig_SimpleFunction('cms_breadcrumb', [$this, 'cmsBreadcrumb'], ['is_safe' => ['html']]),
         ];
     }
 
