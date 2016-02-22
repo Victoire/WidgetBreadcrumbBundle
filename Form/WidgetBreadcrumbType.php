@@ -3,7 +3,7 @@
 namespace Victoire\Widget\BreadcrumbBundle\Form;
 
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Victoire\Bundle\CoreBundle\Form\WidgetType;
 
 /**
@@ -23,28 +23,16 @@ class WidgetBreadcrumbType extends WidgetType
     }
 
     /**
-     * bind form to WidgetBreadcrumb entity.
-     *
-     * @param OptionsResolverInterface $resolver
+     * {@inheritdoc}
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
-        parent::setDefaultOptions($resolver);
+        parent::configureOptions($resolver);
 
         $resolver->setDefaults([
             'data_class'         => 'Victoire\Widget\BreadcrumbBundle\Entity\WidgetBreadcrumb',
             'widget'             => 'breadcrumb',
             'translation_domain' => 'victoire',
         ]);
-    }
-
-    /**
-     * get form name.
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return 'victoire_widget_form_breadcrumb';
     }
 }

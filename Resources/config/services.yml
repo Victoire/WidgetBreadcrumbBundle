@@ -13,7 +13,7 @@ services:
     victoire.widget.form.breadcrumb:
         class: Victoire\Widget\BreadcrumbBundle\Form\WidgetBreadcrumbType
         tags:
-            - { name: form.type , alias: victoire_widget_form_breadcrumb}
+            - { name: form.type }
 
     victoire_core.widget_breadcrumb_builder:
         class: Victoire\Widget\BreadcrumbBundle\Breadcrumb\Builder\BreadcrumbBuilder
