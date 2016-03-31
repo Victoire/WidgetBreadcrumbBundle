@@ -2,7 +2,7 @@
 
 namespace Victoire\Widget\BreadcrumbBundle\Twig\Extension;
 
-use Victoire\Bundle\CoreBundle\Template\TemplateMapper;
+use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
 use Victoire\Bundle\WidgetBundle\Entity\Widget;
 use Victoire\Widget\BreadcrumbBundle\Breadcrumb\Builder\BreadcrumbBuilder;
 
@@ -16,10 +16,10 @@ class WidgetBreadcrumbExtension extends \Twig_Extension
     /**
      * Constructor.
      *
-     * @param TemplateMapper    $templating
+     * @param EngineInterface   $templating
      * @param BreadcrumbBuilder $breadcrumbBuilder
      */
-    public function __construct(TemplateMapper $templating, BreadcrumbBuilder $breadcrumbBuilder)
+    public function __construct(EngineInterface $templating, BreadcrumbBuilder $breadcrumbBuilder)
     {
         $this->breadcrumbBuilder = $breadcrumbBuilder;
         $this->templating = $templating;
