@@ -54,7 +54,7 @@ class BreadcrumbBuilder
                 [
                     'route'           => 'victoire_core_page_show',
                     'label'           => $_view->getName(),
-                    'routeParameters' => ['url' => $_view->getReference()->getUrl()]
+                    'routeParameters' => ['url' => $_view->getReference()->getUrl()],
                 ]
             )
                 ->setCurrent(false);
