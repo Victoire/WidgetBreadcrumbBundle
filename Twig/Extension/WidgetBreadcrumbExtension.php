@@ -2,7 +2,7 @@
 
 namespace Victoire\Widget\BreadcrumbBundle\Twig\Extension;
 
-use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
+use Symfony\Component\DependencyInjection\Container;
 use Victoire\Bundle\WidgetBundle\Entity\Widget;
 use Victoire\Widget\BreadcrumbBundle\Breadcrumb\Builder\BreadcrumbBuilder;
 
@@ -11,18 +11,19 @@ use Victoire\Widget\BreadcrumbBundle\Breadcrumb\Builder\BreadcrumbBuilder;
  */
 class WidgetBreadcrumbExtension extends \Twig_Extension
 {
+    protected $container;
     protected $breadcrumbBuilder = null;
 
     /**
      * Constructor.
      *
-     * @param EngineInterface   $templating
+     * @param Container         $templating
      * @param BreadcrumbBuilder $breadcrumbBuilder
      */
-    public function __construct(EngineInterface $templating, BreadcrumbBuilder $breadcrumbBuilder)
+    public function __construct(Container $container, BreadcrumbBuilder $breadcrumbBuilder)
     {
         $this->breadcrumbBuilder = $breadcrumbBuilder;
-        $this->templating = $templating;
+        $this->container = $container;
     }
 
     /**
@@ -77,7 +78,7 @@ class WidgetBreadcrumbExtension extends \Twig_Extension
         $builder = $this->breadcrumbBuilder;
         $breadcrumbs = $builder->build($view, $entity);
 
-        return $this->templating->render(
+        return $this->container->get('templating')->render(
             'VictoireWidgetBreadcrumbBundle:Breadcrumb:show.html.twig',
             ['breadcrumbs' => $breadcrumbs]
         );
