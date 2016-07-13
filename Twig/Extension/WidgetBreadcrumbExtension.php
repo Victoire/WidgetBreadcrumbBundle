@@ -72,7 +72,7 @@ class WidgetBreadcrumbExtension extends \Twig_Extension
         //the twig template might not have access to the current view
         if ($view === null) {
             //so we use the view of the widget
-            $view = $widget->getView();
+            $view = $widget->getWidgetMap()->getView();
         }
 
         $builder = $this->breadcrumbBuilder;

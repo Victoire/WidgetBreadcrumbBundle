@@ -38,11 +38,13 @@ class BreadcrumbBuilder
         $breadcrumb = $this->factory->createItem('root');
 
         $_view = $view;
+        $initialLocale = $view->getCurrentLocale();
         $parents = [];
 
         //create the list of view with the parents views
         while ($_view->getParent()) {
             /** @var View $_view */
+            $_view->setCurrentLocale($initialLocale); //Force locale to current locale
             $_view = $_view->getParent();
             $parents[] = $_view;
         }
@@ -54,10 +56,10 @@ class BreadcrumbBuilder
                 [
                     'route'           => 'victoire_core_page_show',
                     'label'           => $_view->getName(),
-                    'routeParameters' => ['url' => $_view->getReference()->getUrl()],
+                    'routeParameters' => ['url' => $_view->getReference($initialLocale)->getUrl()],
                 ]
             )
-                ->setCurrent(false);
+            ->setCurrent(false);
         }
 
         //Add the current view
