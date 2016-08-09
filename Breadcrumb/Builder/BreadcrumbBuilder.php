@@ -44,8 +44,8 @@ class BreadcrumbBuilder
         //create the list of view with the parents views
         while ($_view->getParent()) {
             /** @var View $_view */
-            $_view->setCurrentLocale($initialLocale); //Force locale to current locale
             $_view = $_view->getParent();
+            $_view->setCurrentLocale($initialLocale); //Force locale to current locale
             $parents[] = $_view;
         }
 
