@@ -22,8 +22,10 @@ class WidgetBreadcrumb extends Widget
     public function generateCacheId()
     {
         $view = $this->getCurrentView();
+        $initialLocale = $view->getCurrentLocale();
         $nameChain = $view->getReference()->getName();
         while ($view = $view->getParent()) {
+            $view->setCurrentLocale($initialLocale); //Force locale to current locale
             $nameChain .= '/'.$view->getReference()->getName();
         }
 
