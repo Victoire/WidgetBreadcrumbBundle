@@ -1,5 +1,5 @@
 {
-    "name": "friendsofvictoire/breadcrumb-widget",
+    "name": "victoire/breadcrumb-widget",
     "type": "symfony-bundle",
     "description": "Victoire DCMS Breadcrumb widget",
     "keywords": [
