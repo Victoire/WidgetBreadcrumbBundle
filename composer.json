@@ -1,13 +1,11 @@
 {
     "name": "victoire/breadcrumb-widget",
     "type": "symfony-bundle",
-    "description": "Victoire DCMS Breadcrumb widget",
+    "description": "Victoire Breadcrumb widget",
     "keywords": [
-        "DCMS",
         "Victoire",
-        "widget",
-        "FriendsofVictoire",
-        "Breadcrumb"
+        "Breadcrumb",
+        "Widget"
     ],
     "license": "MIT",
     "authors": [
@@ -17,7 +15,7 @@
         }
     ],
     "require": {
-        "victoire/victoire": ">=2.0.0 | ~3.0"
+        "victoire/victoire": "~2.3 | ~3.0"
     },
     "autoload": {
         "psr-0": {
