@@ -1,6 +1,6 @@
 <?php
 
-namespace Victoire\Widget\TitleBundle\Tests\Context;
+namespace Victoire\Widget\BreadcrumbBundle\Tests\Context;
 
 use Knp\FriendlyContexts\Context\RawMinkContext;
 
