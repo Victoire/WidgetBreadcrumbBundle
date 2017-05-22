@@ -23,7 +23,7 @@ services:
     victoire_core.twig.cms_widget_breadcrumb:
         class: Victoire\Widget\BreadcrumbBundle\Twig\Extension\WidgetBreadcrumbExtension
         arguments:
-            - @service_container
+            - "@service_container"
             - "@victoire_core.widget_breadcrumb_builder"
         tags:
             - { name: twig.extension }
