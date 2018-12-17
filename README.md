@@ -36,3 +36,11 @@ Do not forget to add the bundle in your AppKernel !
             return $bundles;
         }
     }
+
+And add the configuration:
+    
+    #app/config/config.yml
+    twig:
+      globals:
+        victoire_twig_responsive: []
+      
