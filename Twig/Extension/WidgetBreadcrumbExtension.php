@@ -80,7 +80,10 @@ class WidgetBreadcrumbExtension extends \Twig_Extension
 
         return $this->container->get('templating')->render(
             'VictoireWidgetBreadcrumbBundle:Breadcrumb:show.html.twig',
-            ['breadcrumbs' => $breadcrumbs]
+            [
+                'breadcrumbs' => $breadcrumbs,
+                'widget' => $widget
+            ]
         );
     }
 }
